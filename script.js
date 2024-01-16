@@ -104,7 +104,7 @@ const timerElement = document.getElementById("timer-value");
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timerValue = 150;
+let timerValue = 200;
 let timerInterval;
 
 function startTimer() {
