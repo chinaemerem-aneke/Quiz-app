@@ -24,19 +24,80 @@ body {
     border-radius: 10px;
 }
 
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
 .quiz-app h1 {
     color:#001e4d;
     font-size: 2.3rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
     font-weight: 600;
-    border-bottom: 1px solid #333;
     user-select: none;
 }
 
 #question h2 {
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+.start-page {
+    background: #fff;
+    width: 100%;
+    max-width: 540px;
+    padding: 1rem 1rem 1.5rem;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-page h1 {
+    color: #001e4d;
+    text-align: left;
+    margin-bottom: .5em;
+}
+
+#rules {
+    text-align: left;
+    font-size: 1em;
+}
+
+#rules span {
+    color: #001e4d;
+}
+
+#rules h2 {
+    font-size: 1.2em;
+    margin-bottom: .5em;
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: .3em;
+}
+
+.start-btn {
+    background-color: #001e4d;
+    color: #fff;
+    padding: .7rem 1.5rem;
+    margin-top: 1em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+    background-color: #00091a;
 }
 
 .btn {

@@ -104,14 +104,60 @@ const questions = [
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-button");
 const nextButton = document.getElementById("next-btn");
+const startPage = document.querySelector(".start-page");
+const startButton = document.querySelector(".start-btn");
+const quizApp = document.querySelector(".quiz-app");
+const timer = document.getElementById("timer");
+const timerElement = document.getElementById("timer-value");
+
 
 let currentQuestionIndex = 0;
 let score = 0;
+let timerValue = 150;
+let timerInterval;
+
+function startTimer() {
+    timerInterval = setInterval(function () {
+      document.getElementById("timer-value").innerText = timerValue;
+      if (timerValue === 0) {
+        clearInterval(timerInterval);
+        showScore();
+      } else {
+        timerValue--;
+      }
+    }, 1000);
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    timerValue = 150;
+    startTimer(); // Set the initial timer value in seconds
+  }
+
 
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
+    showQuestion();
+    timerValue = 150; // Set the initial timer value to 150 seconds
+    startTimer(); // Start the timer when playing again 
+}
+
+function start() {
+    startPage.style.display = "none";
+    quizApp.style.display = "block";
+    showQuestion();
+    timerValue = 150; // Set the initial timer value to 150 seconds
+    startTimer(); // Start the timer when playing again
+}
+
+startButton.addEventListener("click", start);
+
+function playAgain() {
+    startPage.style.display = "block";
+    quizApp.style.display = "none";
+    start();
     showQuestion();
 }
 
@@ -180,6 +226,7 @@ function showScore(){
     nextButton.style.display = "block";
 }
 
+
 // Adding functionalty to the next button
 function moveToNextQuestion(){
     currentQuestionIndex++;
@@ -188,6 +235,7 @@ function moveToNextQuestion(){
     }
     else{
         showScore();
+        clearInterval(timerInterval);
     }
     
 }
@@ -202,4 +250,3 @@ nextButton.addEventListener("click", ()=>{
 });
 
 startQuiz();
-
