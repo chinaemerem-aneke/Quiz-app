@@ -141,6 +141,16 @@ p {
     background: #00091a;
 }
 
+#timer {
+    font-size: .9rem;
+    width: 8rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    background:#001e4d;
+    padding: .5em .8em;
+}
+
 .correct-answer {
     background: rgb(21, 167, 21);
 }
