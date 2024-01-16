@@ -1,105 +1,96 @@
 const questions = [
     {
-        question: "What is the capital of France?",
+        question: "What does 'JS' stand for in JavaScript?",
         answers: [
-            {text: "London", correct: false},
-            {text: "Berlin", correct: false},
-            {text: "Paris", correct: true},
-            {text: "Madrid", correct: false},
-        ]
-    }, 
-
-    {
-        question: "In which year did Christopher Columbus first reach the Americas?",
-        answers: [
-            {text: "1492", correct: true},
-            {text: "1500", correct: false},
-            {text: "1607", correct: false},
-            {text: "1778", correct: false},
-        ]
-    }, 
-
-    {
-        question: "Which planet is known as the 'Red Planet'?",
-        answers: [
-            {text: "Venus", correct: false},
-            {text: "Mars", correct: true},
-            {text: "Jupiter", correct: false},
-            {text: "Saturn", correct: false},
-        ]
-    }, 
-    
-    {
-        question: "Who wrote 'Romeo and Juliet'?",
-        answers: [
-            {text: "Charles Dickens", correct: false},
-            {text: "William Shakespeare", correct: true},
-            {text: "Jane Austen", correct: false},
-            {text: "Mark Twain", correct: false},
-        ]
-    }, 
-    
-    {
-        question: "What is the largest mammal in the world?",
-        answers: [
-            {text: "Elephant", correct: false},
-            {text: "Blue Whale", correct: true},
-            {text: "Giraffe", correct: false},
-            {text: "Hippopotamus", correct: false},
+            {text: "Java Source", correct: false},
+            {text: "JavaScript", correct: true},
+            {text: "Java Scripting", correct: false},
+            {text: "Java Syntax", correct: false},
         ]
     },
-    
     {
-        question: "What is the capital of Japan?",
+        question: "Which keyword is used to declare a variable in JavaScript?",
         answers: [
-            {text: "Bangtok", correct: false},
-            {text: "Seoul", correct: false},
-            {text: "Tokyo", correct: true},
-            {text: "Beijing", correct: false},
+            {text: "var", correct: true},
+            {text: "let", correct: false},
+            {text: "const", correct: false},
+            {text: "variable", correct: false},
         ]
     },
-        
-    
     {
-        question: "What is the chemical symbol for gold?",
+        question: "What is the purpose of 'console.log()' in JavaScript?",
         answers: [
-            {text: "Ag", correct: false},
-            {text: "Fe", correct: false},
-            {text: "Cu", correct: false},
-            {text: "Au", correct: true},
+            {text: "To display a message in the console", correct: true},
+            {text: "To create a log file", correct: false},
+            {text: "To log user actions", correct: false},
+            {text: "To print messages on the webpage", correct: false},
         ]
-    },  
-    
+    },
     {
-        question: "Who painted the Mona Lisa?",
+        question: "What is the result of the expression: 10 % 3 in JavaScript?",
         answers: [
-            {text: "Pablo Picasso", correct: false},
-            {text: "Vincent van Gogh", correct: false},
-            {text: "Leonardo da Vinci", correct: true},
-            {text: "Michelangelo", correct: false},
+            {text: "3", correct: false},
+            {text: "1", correct: true},
+            {text: "0.1", correct: false},
+            {text: "10", correct: false},
         ]
-    }, 
-    
+    },
     {
-        question: " Which element is essential for human bones and teeth?",
+        question: "What is an example of a falsy value in JavaScript?",
         answers: [
-            {text: "Iron", correct: false},
-            {text: "Calcium", correct: true},
-            {text: "Sodium", correct: false},
-            {text: "Potassium", correct: false},
+            {text: "0", correct: false},
+            {text: "'' (empty string)", correct: false},
+            {text: "null", correct: false},
+            {text: "All of the above", correct: true},
         ]
-    }, 
-
+    },
     {
-     question: "What is the largest ocean on Earth?",
+        question: "Which event is triggered when a user clicks on an HTML element in JavaScript?",
         answers: [
-            {text: "Atlantic Ocean", correct: false},
-            {text: "Indian Ocean", correct: false},
-            {text: " Southern Ocean", correct: false},
-            {text: "Pacific Ocean", correct: true},
+            {text: "onMouseOver", correct: false},
+            {text: "onClick", correct: true},
+            {text: "onChange", correct: false},
+            {text: "onSubmit", correct: false},
         ]
-    }
+    },
+    {
+        question: "What is the purpose of the 'let' keyword in JavaScript?",
+        answers: [
+            {text: "To declare a constant variable", correct: false},
+            {text: "To declare a block-scoped variable", correct: true},
+            {text: "To declare a global variable", correct: false},
+            {text: "To declare a function", correct: false},
+        ]
+    },
+    {
+        question: "Which method is used to remove the last element from an array in JavaScript?",
+        answers: [
+            {text: "pop()", correct: true},
+            {text: "shift()", correct: false},
+            {text: "splice()", correct: false},
+            {text: "remove()", correct: false},
+        ]
+    },
+    {
+        question: "What is the purpose of the 'JSON.parse()' method in JavaScript?",
+        answers: [
+            {text: "To stringify a JSON object", correct: false},
+            {text: "To convert a JSON string into a JavaScript object", correct: true},
+            {text: "To parse HTML", correct: false},
+            {text: "To create a JSON object", correct: false},
+        ]
+    },
+    {
+        question: "Which operator is used for strict equality in JavaScript?",
+        answers: [
+            {text: "==", correct: false},
+            {text: "===", correct: true},
+            {text: "!=", correct: false},
+            {text: "!==", correct: false},
+        ]
+    },
 ];
+
 
 const questionElement = document.getElementById("question");
 const answerButton = document.getElementById("answer-button");
@@ -118,7 +109,7 @@ let timerInterval;
 
 function startTimer() {
     timerInterval = setInterval(function () {
-      document.getElementById("timer-value").innerText = timerValue;
+      document.getElementById("timer-value").innerText = `${timerValue}s`;
       if (timerValue === 0) {
         clearInterval(timerInterval);
         showScore();
@@ -127,10 +118,10 @@ function startTimer() {
       }
     }, 1000);
   }
-
+  
   function resetTimer() {
     clearInterval(timerInterval);
-    timerValue = 150;
+    timerValue = 200;
     startTimer(); // Set the initial timer value in seconds
   }
 
@@ -140,7 +131,7 @@ function startQuiz(){
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
-    timerValue = 150; // Set the initial timer value to 150 seconds
+    timerValue = 200; // Set the initial timer value to 150 seconds
     startTimer(); // Start the timer when playing again 
 }
 
@@ -148,7 +139,7 @@ function start() {
     startPage.style.display = "none";
     quizApp.style.display = "block";
     showQuestion();
-    timerValue = 150; // Set the initial timer value to 150 seconds
+    timerValue = 200; // Set the initial timer value to 150 seconds
     startTimer(); // Start the timer when playing again
 }
 
@@ -209,6 +200,7 @@ function selectAnswer(e){
         button.disabled = true;
     });
     nextButton.style.display = "block";
+
 }
 
 function showSubmitButton(){
@@ -224,6 +216,7 @@ function showScore(){
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
+    
 }
 
 
