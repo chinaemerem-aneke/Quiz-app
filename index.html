@@ -10,8 +10,23 @@
     <title>Quiz App</title>
 </head>
 <body>
-    <div class="quiz-app">
-        <h1>Quiz</h1>
+      <div class="start-page">
+        <h1>JavaScript Quiz</h1>
+        <div id="rules">
+            <h2>Rules</h2>
+            <p>1. You have <span>10</span> questions in total to answer.</p>
+            <p>2. You have <span>150</span> seconds to answer all questions.</p>
+            <p>3. Once you select your answer, you can't reselect.</p>
+            <!-- <p>3. Click 'Submit' after answering the last question.</p> -->
+        </div>
+        <button class="start-btn">Start Quiz</button>
+    </div>
+    <div class="quiz-app" style="display: none;">
+        <div id="header">
+            <h1>Quiz</h1>
+            <div id="timer">Time Left: <span id="timer-value"></span></div>
+        </div>
+        
         <!-- <picture>
             <img src="assets/timer.jpg" width="50px" alt="timer">
         </picture> -->
@@ -29,5 +44,6 @@
 
     <!-- Our Customized JavaScript -->
     <script src="script.js"></script>
+    
 </body>
 </html>
